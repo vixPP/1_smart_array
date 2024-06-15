@@ -3,10 +3,7 @@
 
 class smart_array
 {
-public:
-    smart_array(const smart_array&) = delete;
-    smart_array& operator=(const smart_array&) = delete;
-
+public:   
     smart_array(size_t size) : m_size(size), m_data(new int[size])
     {
         if (!m_data)
@@ -40,6 +37,9 @@ public:
         }
         return m_data[index];
     }
+
+    smart_array(const smart_array&) = delete;
+    smart_array& operator=(const smart_array&) = delete;
 
 private:
     size_t m_size;
